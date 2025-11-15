@@ -10,10 +10,9 @@
     <h2>ログイン</h2>
   </div>
   
-  <form class="form" action="{{ route('login') }}" method="POST">
+  <form class="form" action="/login" method="post">
     @csrf
-
-    <div class="form__group">
+ <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">メールアドレス</span>
       </div>
@@ -40,4 +39,16 @@
         <div class="form__error">
           @error('password')
             {{ $message }}
-          @enderro
+          @enderror
+      </div>
+      </div>
+    </div>
+    <div class="form__button">
+      <button class="form__button-submit" type="submit">ログイン</button>
+    </div>
+  </form>
+  <div class="register__link">
+    <a class="register__button-submit" href="/register">会員登録の方はこちら</a>
+  </div>
+</div>
+@endsection  

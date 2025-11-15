@@ -16,3 +16,6 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 // ログイン
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+
+Route::middleware('auth')->group(function () {     Route::get('/', [AuthController::class, 'index']);
+ });
